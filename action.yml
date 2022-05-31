@@ -3,6 +3,16 @@ description: A github action template
 author: Breach AS
 inputs:
   # Inputs goes here
+  path:
+    required: true
+    description: Path to the changelog to modify
+  version:
+    required: true
+    description: Version tag to bump with. Must follow semVer v2
+    default: '0.1.0'
+  repository:
+    required: true
+    description: Repository to link to when producing links to the particular release
 outputs:
   # Output goes here
 

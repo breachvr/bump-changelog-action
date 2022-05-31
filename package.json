@@ -1,7 +1,7 @@
 {
-  "name": "template-action",
+  "name": "bump-changelog-version",
   "version": "0.1.0",
-  "description": "A template for a github-action",
+  "description": "A github action that bumps a changelog to the next supplied version",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -11,23 +11,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/breachvr/github-action-template.git"
+    "url": "git+https://github.com/breachvr/bump-changelog-action.git"
   },
   "keywords": [
     "github",
     "action",
-    "template"
+    "version",
+    "changelog"
   ],
   "author": "Breach AS",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/breachvr/github-action-template/issues"
+    "url": "https://github.com/breachvr/bump-changelog-action/issues"
   },
-  "homepage": "https://github.com/breachvr/github-action-template#readme",
+  "homepage": "https://github.com/breachvr/bump-changelog-action#readme",
   "dependencies": {
     "@actions/core": "^1.6.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.36",
     "@vercel/ncc": "^0.33.3",
     "typescript": "^4.5.5"
   }

@@ -1,9 +1,12 @@
-# github-action-template
+# Bump Changelog Version
 
-A template for setting up new github-actions
+A github action to update and bump changelog to a new version
 
-1. Change name and values in `package.json`
-2. Change name and values in `action.yml`
-3. More?
-4. `npm install`
-5. -> Start development
+
+
+## Contributing
+
+1. Fork the repo
+2. Clone the forked repo
+3. Open the repo on your computer enter `npm install` to get started
+4. Submit pull requests to this repo
