@@ -1,0 +1,41 @@
+name: Create Next Action
+
+on:
+  push:
+    branches:
+     - main
+
+jobs:
+  create-next:
+    # name: Create next
+    env:
+      BRANCH: next
+      USER: Weibye
+      EMAIL: 13300393+Weibye@users.noreply.github.com
+    #   GITHUB_TOKEN: ${{ secrets.PACKAGE_RELEASE_TOKEN }} # Make sure pushes from this actually trigger other workflows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup git
+        run: |
+          git config --global user.name '$USER'
+          git config --global user.email '$EMAIL'
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PACKAGE_RELEASE_TOKEN }}
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+      - name: Package
+        run: |
+          npm install
+          npm run package
+          cp action.yml dist/
+          cp README.md dist/
+          cp package* dist/
+          git add .
+          git commit -m "Preparing package from $GITHUB_SHA"
+          git subtree split -P dist -b "$BRANCH"
+          git checkout "$BRANCH"
+          git push -u -f origin "$BRANCH"

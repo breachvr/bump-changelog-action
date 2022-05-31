@@ -1,0 +1,34 @@
+{
+  "name": "template-action",
+  "version": "0.1.0",
+  "description": "A template for a github-action",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "npx tsc",
+    "package": "npx ncc build src/Action.ts -m --license third-party-licences.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breachvr/github-action-template.git"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "template"
+  ],
+  "author": "Breach AS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/breachvr/github-action-template/issues"
+  },
+  "homepage": "https://github.com/breachvr/github-action-template#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.3",
+    "typescript": "^4.5.5"
+  }
+}

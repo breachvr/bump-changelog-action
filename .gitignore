@@ -1,0 +1,8 @@
+# NodeJS
+node_modules/
+
+# Visual studio code
+.vscode/
+
+# Compiled
+# ts-out/

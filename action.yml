@@ -1,0 +1,15 @@
+name: template-action
+description: A github action template
+author: Breach AS
+inputs:
+  # Inputs goes here
+outputs:
+  # Output goes here
+
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+runs:
+  using: 'node16'
+  main: 'index.js' # Entrypoint of action
