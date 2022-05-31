@@ -1,5 +1,6 @@
 import * as core from '@actions/core';
 import * as fs from 'fs';
+import * as node_path from 'path';
 
 const unreleased_pattern = /^##\s\[[Uu]nreleased\]\s$/gm;
 
@@ -12,15 +13,23 @@ class Action {
 
     public async Run() {
         const path = core.getInput('path');
+
+        console.log('Path: ' + path);
+
+        const abs_path = node_path.resolve(__dirname, path);
+
+        console.log('Absolute Path: ' + abs_path);
+
         const next_version = core.getInput('version');
         const repository = core.getInput('repository');
 
-        if (!fs.existsSync(path)) {
-            console.log('No file found on ' + path);
-            throw new Error('No file found on ' + path);
+        if (!fs.existsSync(abs_path)) {
+            console.log('No file found on ' + abs_path);
+            throw new Error('No file found on ' + abs_path);
         }
 
-        let changelog = fs.readFileSync(path, { encoding: 'utf8'});
+
+        let changelog = fs.readFileSync(abs_path, { encoding: 'utf8'});
         if (!changelog) {
             console.log('Changelog not a valid file');
             throw new Error('Not able to parse changelog file');
@@ -47,7 +56,7 @@ ${ release_string }
 `;
         const updated_content = changelog.replace(unreleased_pattern, new_section);
 
-        fs.writeFileSync(path, updated_content, { encoding: 'utf8' });
+        fs.writeFileSync(abs_path, updated_content, { encoding: 'utf8' });
     }
 }
 
