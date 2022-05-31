@@ -54,5 +54,5 @@ ${ release_string }
 try {
     new Action().Run();
 } catch (error: any) {
-    core.setFailed(error.message);
+    core.setFailed(error.message as string);
 }
