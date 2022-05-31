@@ -9,11 +9,11 @@ inputs:
   version:
     required: true
     description: Version tag to bump with. Must follow semVer v2
-    default: '0.1.0'
+    default: 0.1.0
   repository:
     required: true
     description: Repository to link to when producing links to the particular release
-outputs:
+# outputs:
   # Output goes here
 
 branding:
