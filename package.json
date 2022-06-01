@@ -1,0 +1,36 @@
+{
+  "name": "bump-changelog-version",
+  "version": "0.1.0",
+  "description": "A github action that bumps a changelog to the next supplied version",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "npx tsc",
+    "package": "npx ncc build src/Action.ts -m --license third-party-licences.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breachvr/bump-changelog-action.git"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "version",
+    "changelog"
+  ],
+  "author": "Breach AS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/breachvr/bump-changelog-action/issues"
+  },
+  "homepage": "https://github.com/breachvr/bump-changelog-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.38",
+    "@vercel/ncc": "^0.34.0",
+    "typescript": "^4.5.5"
+  }
+}

@@ -1,0 +1,22 @@
+name: bump-changelog-version
+description: An action that bumps the version-section of a Changelog document to a new version based in the input
+author: Breach AS
+inputs:
+  path:
+    required: true
+    description: Path to the Changelog.md
+  version:
+    required: true
+    description: Version tag to bump with. Should follow SemVer v2
+    default: 0.1.0
+  repository:
+    required: true
+    description: Repository to link to, when producing links to the particular release
+
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+runs:
+  using: 'node16'
+  main: 'index.js' # Entrypoint of action
